@@ -9,6 +9,11 @@ body {
     color: rgb(240,240,240);
 }
 
+#manpage {
+    font-family: monospace;
+    font-size: 120%;
+}
+
 /* unvisited link */
 a:link {
   color: rgb(0,255,150);
