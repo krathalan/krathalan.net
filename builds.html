@@ -45,11 +45,22 @@
 
           <p>
                Add the following snippet to your <code>/etc/pacman.conf</code>:
-               <br><br>
+               <br>
                <code>
                     [krathalan]
                     <br>Server = https://builds.krathalan.net/$arch
                </code>
+
+               <br><br>You will need to add my GPG key to your pacman keyring and trust it:
+               <br>
+               <code>
+                    $ curl -O https://builds.krathalan.net/keys/srht.asc
+                    <br>$ sudo -s
+                    <br># pacman-key -a srht.asc
+                    <br># pacman-key --edit-key B46B326273E4A1D21AAA3F6F529AC10050BD24EF
+               </code>
+
+               <br><br>Then trust the key, save, and exit. Now you can <code>pacman -Syu</code> and get some packages.
           </p>
 
           <h4>Contact me</h4>
