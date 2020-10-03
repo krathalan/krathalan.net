@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+     <!--
+          Homepage for builds.krathalan.net
+          Source: https://git.sr.ht/~krathalan/krathalan.net
+          Copyright (C) 2020 Hunter Peavey
+
+          This program is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation, either version 3 of the License, or
+          (at your option) any later version.
+
+          This program is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with this program.  If not, see <https://www.gnu.org/licenses/>.
+     -->
+
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>builds.krathalan.net</title>
+          <base target="_blank">
+          <link rel='stylesheet' type='text/css' href='index.css'>
+     </head>
+
+     <body>
+          <h1>builds.krathalan.net</h1>
+
+          <p>
+               You can find packages for Arch Linux here. You may either browse and download the packages and signatures manually, or add the repo to your <code>/etc/pacman.conf</code>.
+          </p>
+
+          <h2>Browse</h2>
+
+          <p>
+               x86_64 packages: <a href=https://builds.krathalan.net/x86_64/>https://builds.krathalan.net/x86_64/</a>
+               <br>aarch64 (ARMv8) packages: <a href=https://builds.krathalan.net/aarch64/>https://builds.krathalan.net/aarch64/</a>
+          </p>
+
+          <h2>Add to pacman</h2>
+
+          <p>
+               Add the following snippet to your <code>/etc/pacman.conf</code>:
+               <br><br>
+               <code>
+                    [krathalan]
+                    <br>Server = https://builds.krathalan.net/$arch
+               </code>
+          </p>
+
+          <h4>Contact me</h4>
+
+          <p>
+               About this repo/any hosted packages: <a href="mailto:srht@krathalan.net">srht@krathalan.net</a> / <a href="keys/srht.asc">B46B 3262 73E4 A1D2 1AAA 3F6F 529A C100 50BD 24EF</a>
+          </p>
+
+          <a href="https://liberapay.com/krathalan/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+     </body>
+</html>
