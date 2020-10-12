@@ -44,19 +44,19 @@
           <h2>Add to pacman</h2>
 
           <p>
-               Add the following snippet to your <b>/etc/pacman.conf</b>:
+               Add the following snippet to your <b>/etc/pacman.conf</b>:</p>
 
-                    <br><br>&nbsp;&nbsp;&nbsp;[krathalan]
-                    <br>&nbsp;&nbsp;&nbsp;Server = https://builds.krathalan.net/$arch
+                    <p style="margin-left:5%; margin-right:5%;">[krathalan]
+                    <br>Server = https://builds.krathalan.net/$arch</p>
 
-               <br><br>You will need to add my GPG key to your pacman keyring and trust it:
+               <p>You will need to add my GPG key to your pacman keyring and trust it:</p>
                
-                    <br><br>&nbsp;&nbsp;&nbsp;$ curl -O https://builds.krathalan.net/keys/srht.asc
-                    <br>&nbsp;&nbsp;&nbsp;$ sudo -s
-                    <br>&nbsp;&nbsp;&nbsp;# pacman-key -a srht.asc
-                    <br>&nbsp;&nbsp;&nbsp;# pacman-key --edit-key B46B326273E4A1D21AAA3F6F529AC10050BD24EF
+                    <p style="margin-left:5%; margin-right:5%;">$ curl -O https://builds.krathalan.net/keys/srht.asc
+                    <br>$ sudo -s
+                    <br># pacman-key -a srht.asc
+                    <br># pacman-key --edit-key B46B326273E4A1D21AAA3F6F529AC10050BD24EF</p>
 
-               <br><br>Then trust the key, save, and exit. Now you can <b>pacman -Syu</b> and get some packages.
+               <p>Then trust the key, save, and exit. Now you can <b>pacman -Syu</b> and get some packages.
           </p>
 
           <h4>Contact me</h4>
