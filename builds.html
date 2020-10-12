@@ -31,7 +31,7 @@
           <h1>builds.krathalan.net</h1>
 
           <p>
-               You can find packages for Arch Linux here. You may either browse and download the packages and signatures manually, or add the repo to your <code>/etc/pacman.conf</code>.
+               You can find packages for Arch Linux here. You may either browse and download the packages and signatures manually, or add the repo to your <b>/etc/pacman.conf</b>.
           </p>
 
           <h2>Browse</h2>
@@ -44,23 +44,19 @@
           <h2>Add to pacman</h2>
 
           <p>
-               Add the following snippet to your <code>/etc/pacman.conf</code>:
-               <br>
-               <code>
-                    [krathalan]
-                    <br>Server = https://builds.krathalan.net/$arch
-               </code>
+               Add the following snippet to your <b>/etc/pacman.conf</b>:
+
+                    <br><br>&nbsp;&nbsp;&nbsp;[krathalan]
+                    <br>&nbsp;&nbsp;&nbsp;Server = https://builds.krathalan.net/$arch
 
                <br><br>You will need to add my GPG key to your pacman keyring and trust it:
-               <br>
-               <code>
-                    $ curl -O https://builds.krathalan.net/keys/srht.asc
-                    <br>$ sudo -s
-                    <br># pacman-key -a srht.asc
-                    <br># pacman-key --edit-key B46B326273E4A1D21AAA3F6F529AC10050BD24EF
-               </code>
+               
+                    <br><br>&nbsp;&nbsp;&nbsp;$ curl -O https://builds.krathalan.net/keys/srht.asc
+                    <br>&nbsp;&nbsp;&nbsp;$ sudo -s
+                    <br>&nbsp;&nbsp;&nbsp;# pacman-key -a srht.asc
+                    <br>&nbsp;&nbsp;&nbsp;# pacman-key --edit-key B46B326273E4A1D21AAA3F6F529AC10050BD24EF
 
-               <br><br>Then trust the key, save, and exit. Now you can <code>pacman -Syu</code> and get some packages.
+               <br><br>Then trust the key, save, and exit. Now you can <b>pacman -Syu</b> and get some packages.
           </p>
 
           <h4>Contact me</h4>
