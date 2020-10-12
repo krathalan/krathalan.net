@@ -1,4 +1,10 @@
+@font-face {
+    font-family: FiraMono, monospace;
+    src: url(./FiraMono-Regular.woff2);
+}
+
 body {
+    font-family: 'FiraMono', monospace;
     max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
@@ -10,16 +16,16 @@ body {
 }
 
 #manpage {
-    font-family: monospace;
+    font-family: 'FiraMono', monospace;
     font-size: 120%;
 }
 
 /* unvisited link */
 a:link {
-  color: rgb(0,255,150);
+    color: rgb(0,255,150);
 }
 
 /* visited link */
 a:visited {
-  color: rgb(0,204,119);
+    color: rgb(0,204,119);
 }
