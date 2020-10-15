@@ -5,6 +5,7 @@
 
 body {
     font-family: 'FiraMono', monospace;
+    font-size: 90%;
     max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
@@ -17,7 +18,7 @@ body {
 
 #manpage {
     font-family: 'FiraMono', monospace;
-    font-size: 120%;
+    font-size: 90%;
 }
 
 /* unvisited link */
