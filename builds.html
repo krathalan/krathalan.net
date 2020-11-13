@@ -35,6 +35,21 @@
                You can find packages I have built for for Arch Linux here. You may either browse and download the packages and signatures manually, or add the repo to your <b>/etc/pacman.conf</b>.
           </p>
 
+          <h2>Modifications</h2>
+
+          <p>
+               Three available packages are built with modifications to their PKGBUILD and/or other files, or different-than-default configuration options (click to see patches for that package):
+               <ul>
+                    <li><a href="https://git.sr.ht/~krathalan/build-alterations/tree/master/linux-mainline" rel="noopener noreferrer" target="_blank">linux-mainline</a>: only supports AMD/Intel CPUs, stronger ASLR (like linux-hardened)<sup>[<a href="https://wiki.archlinux.org/index.php/Security#Userspace_ASLR_comparison" rel="noopener noreferrer" target="_blank">↗</a>]</sup>, no SELinux/Tomoyo support, GCC plugins (entropy+randstruct)</li>
+                    <li><a href="https://git.sr.ht/~krathalan/build-alterations/tree/master/ungoogled-chromium" rel="noopener noreferrer" target="_blank">ungoogled-chromium</a>: enable ozone flags</li>
+                    <li><a href="https://git.sr.ht/~krathalan/build-alterations/tree/master/wine-tkg-git" rel="noopener noreferrer" target="_blank">wine-tkg-git</a>: proton patches, -march=haswell<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
+               </ul>
+          </p>
+
+          <p>
+               All other packages are built with their default state after fetching from the AUR.
+          </p>
+
           <h2>Browse</h2>
 
           <p>
