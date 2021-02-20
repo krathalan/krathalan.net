@@ -21,6 +21,12 @@ body {
     font-size: 90%;
 }
 
+#inner {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* unvisited link */
 a:link {
     color: rgb(0,255,150);
