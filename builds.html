@@ -37,7 +37,7 @@
           </p>
 
           <p>
-               All packages are free software except for the <b>minecraft-launcher</b> and <b>minecraft-server</b> packages.
+               All packages here are free software except for the <b>minecraft-launcher</b> and <b>minecraft-server</b> packages.
           </p>
 
           <h2>Modifications</h2>
@@ -45,12 +45,9 @@
           <p>
                Some packages are built with modifications to their PKGBUILD and/or other files, or different-than-default configuration options (click to see patches for that package):
                <ul>
-                    <li><a href="https://git.sr.ht/~krathalan/build-alterations/tree/master/wine-tkg-git" rel="noopener noreferrer" target="_blank">wine-tkg-git</a>: proton patches, -march=znver2<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
+                    <li><a href="https://git.sr.ht/~krathalan/build-alterations/tree/master/wine-tkg-git" rel="noopener noreferrer" target="_blank">wine-tkg-git</a>: proton patches, disable futex2, -march=znver2<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
+                    <li><a href="https://git.sr.ht/~krathalan/build-alterations/tree/master/plata-theme" rel="noopener noreferrer" target="_blank">plata-theme</a>: dark color scheme with green accents<sup>[<a href="https://builds.krathalan.net/plata-theme.jpg" rel="noopener noreferrer" target="_blank">↗</a>]</sup> and disable desktop environments I don't use</li>
                </ul>
-          </p>
-
-          <p>
-               This list may change.
           </p>
 
           <p>
@@ -80,12 +77,12 @@
 
                <p>You will need to add my GPG key to your pacman keyring and trust it:</p>
 
-                    <blockquote>$ curl -O https://builds.krathalan.net/keys/srht.asc
+                    <blockquote>$ curl -O "https://builds.krathalan.net/keys/builder.asc" -O "https://builds.krathalan.net/keys/srht.asc"
                     <br>$ sudo -s
-                    <br># pacman-key -a srht.asc
-                    <br># pacman-key --edit-key B46B326273E4A1D21AAA3F6F529AC10050BD24EF</blockquote>
+                    <br># pacman-key -a builder.asc srht.asc
+                    <br># pacman-key --edit-key 1C52FC395F059E60180BB53BCD9097F0E64296BB</blockquote>
 
-               <p>Then trust the key, save, and exit. Now you can <b>pacman -Syu</b> and get some packages.
+               <p>Then trust the key, save, and exit. Do the same for B46B326273E4A1D21AAA3F6F529AC10050BD24EF. Now you can <b>pacman -Syu</b> and get some packages.
           </p>
 
           <h4>Contact me</h4>
