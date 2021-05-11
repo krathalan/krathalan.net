@@ -3,6 +3,10 @@
     src: url(./FiraMono-Regular.woff2);
 }
 
+img {
+    border: 1px solid #aaaaaa;
+}
+
 body {
     font-family: 'FiraMono', monospace;
     font-size: 90%;
