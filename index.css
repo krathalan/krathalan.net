@@ -31,6 +31,16 @@ body {
     text-align: center;
 }
 
+#header {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    background-color: rgb(50,50,50);
+}
+
 /* unvisited link */
 a:link {
     color: rgb(179, 166, 216);
