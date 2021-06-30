@@ -41,6 +41,10 @@ body {
     background-color: rgb(50,50,50);
 }
 
+a {
+    text-decoration: none;
+}
+
 /* unvisited link */
 a:link {
     color: rgb(179, 166, 216);
