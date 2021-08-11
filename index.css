@@ -20,6 +20,15 @@ body {
     color: rgb(240,240,240);
 }
 
+code {
+    font-size: 135%;
+    color: #00ff96;
+}
+
+pre {
+    margin-left: 40px;
+}
+
 #manpage {
     font-family: 'FiraMono', monospace;
     font-size: 90%;
