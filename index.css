@@ -64,7 +64,7 @@ pre {
         margin-left: 0%;
         margin-right: 0%;
     }
-    img {
+    #image {
       width: 100%;
     }
 }
@@ -74,12 +74,18 @@ pre {
         margin-left: 15%;
         margin-right: 15%;
     }
+    #image {
+      width: 85%;
+    }
 }
 
 @media (min-width: 1000px) {
     .container {
         margin-left: 30%;
         margin-right: 30%;
+    }
+    #image {
+      width: 70%;
     }
 }
 
