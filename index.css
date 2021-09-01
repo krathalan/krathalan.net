@@ -22,7 +22,7 @@ body {
 
 code {
     font-size: 135%;
-    color: #00ff96;
+    color: #fff569;
 }
 
 pre {
@@ -63,6 +63,9 @@ pre {
     .container {
         margin-left: 0%;
         margin-right: 0%;
+    }
+    img {
+      width: 100%;
     }
 }
 
