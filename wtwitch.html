@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2021-05-12" />
+  <meta name="dcterms.date" content="2021-10-26" />
   <title>wtwitch</title>
   <style>
     code{white-space: pre-wrap;}
@@ -20,12 +20,12 @@
 <body>
 <header id="title-block-header">
 <h1 class="title">wtwitch</h1>
-<p class="date">2021-05-12</p>
+<p class="date">2021-10-26</p>
 </header>
 <h1>NAME</h1>
 <p>wtwitch - terminal user interface for Twitch</p>
 <h1>SYNOPSIS</h1>
-<p>wtwitch [<strong>c</strong>|<strong>t</strong>|<strong>l</strong>|<strong>v</strong>|<strong>h</strong>|<strong>w</strong> <em>streamer</em>|<strong>s</strong> <em>streamer</em>|<strong>u</strong> <em>streamer</em>|<strong>b</strong> <em>streamer</em>|<strong>g</strong> <em>game</em>|<strong>e</strong> <em>term</em>|<strong>n</strong> <em>term</em>|<strong>p</strong> <em>player</em>|<strong>q</strong> <em>quality</em>]</p>
+<p>wtwitch [COMMAND] [streamer, search term, game, player, quality]</p>
 <h1>DESCRIPTION</h1>
 <p>Wtwitch is a terminal program that uses the Twitch API and the streamlink package to provide Twitch browsing, subscription, and playback functionality without signing up for a Twitch account and without loading or executing Twitch's proprietary JavaScript.</p>
 <h1>COMMANDS</h1>
@@ -34,6 +34,12 @@
 <blockquote>
 <p>Watch the specified <em>streamer</em>.<br />
 e.g. wtwitch <strong>w</strong> <em>dratnos</em></p>
+</blockquote>
+<p><strong>v</strong> <em>streamer</em> [optional VOD number], <strong>vod</strong> <em>streamer</em> [optional VOD number]</p>
+<blockquote>
+<p>List the latest VODs from a <em>streamer</em>. Optionally, supply the number of the VOD you want to watch to open it in your default player.<br />
+e.g. wtwitch <strong>v</strong> dratnos<br />
+e.g. wtwitch <strong>v</strong> dratnos 5</p>
 </blockquote>
 <p><strong>t</strong>, <strong>top</strong></p>
 <blockquote>
@@ -111,9 +117,9 @@ e.g. wtwitch <strong>l</strong></p>
 <p>Print a short usage guide.<br />
 e.g. wtwitch <strong>h</strong></p>
 </blockquote>
-<p><strong>v</strong>, <strong>version</strong></p>
+<p><strong>version</strong></p>
 <blockquote>
-<p>Print the version of wtwitch.<br />
+<p>Print the current version of wtwitch.<br />
 e.g. wtwitch <strong>v</strong></p>
 </blockquote>
 <h1>TAB COMPLETION</h1>
@@ -138,13 +144,13 @@ e.g. wtwitch <strong>v</strong></p>
 <p>After setting up Syncthing on the computers on which you wish to sync subscriptions, copy your subscriptions file from ~/.config/wtwitch/config.json to a directory that you are syncing with Syncthing. Then link the file to the previous location. For example, if you copied your subscriptions file to ~/Documents/Config, you can link it to the correct location with the command:</p>
 <p>ln -sf ~/Documents/Config/config.json ~/.config/wtwitch/config.json</p>
 <h1>CHANGELOG</h1>
-<p>View the wtwitch changelog with the command:</p>
+<p>View the changes/additions for the latest installed version of wtwitch with the command:</p>
 <p>pacman -Qc wtwitch</p>
 <h1>LANGUAGES</h1>
 <p>Full support:<br />
-English<br />
-French/Français</p>
+English</p>
 <p>Partial support:<br />
+French/Français<br />
 German/Deutsch<br />
 Spanish/Español</p>
 <p>User-contributed translations are welcome!</p>
