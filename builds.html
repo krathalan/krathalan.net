@@ -53,7 +53,11 @@
           <h2>Modifications</h2>
 
           <p>
-               Some packages are built with modifications to their PKGBUILD and/or other files, or different-than-default configuration options (click to see patches for that package):
+              <b>Please note all packages built after 1/10/2023 are built with -march=x86-64-v3.</b> Check if your system supports this: <a href="https://git.harting.dev/ALHP/ALHP.GO#1-check-your-system-for-support" rel="noopener noreferrer" target="_blank">https://git.harting.dev/ALHP/ALHP.GO#1-check-your-system-for-support</a>
+          </p>
+
+          <p>
+               Some packages are built with additional modifications to their PKGBUILD and/or other files, or different-than-default configuration options (click to see patches for that package):
                <ul>
                     <li><a href="https://github.com/krathalan/build-alterations/tree/master/linux-clear" rel="noopener noreferrer" target="_blank">linux-clear</a>: LLVM compiler, LTO, -march=x86-64-v3<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
                     <li><a href="https://github.com/krathalan/build-alterations/tree/master/linux-tkg-znver3" rel="noopener noreferrer" target="_blank">linux-tkg-znver3</a>: LLVM compiler, full LTO, enable futex2 and futex_waitv, -march=znver3<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
@@ -69,6 +73,7 @@
 
           <p>
                All other packages are built with their default state after fetching from the AUR.
+               <br>You can see the exact makepkg.conf used to build all packages <a href="https://github.com/krathalan/etc-config/blob/master/home-server/makepkg.conf" rel="noopener noreferrer" target="_blank">here</a>.
           </p>
 
           <h2>Browse</h2>
