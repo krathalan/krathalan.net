@@ -50,20 +50,33 @@
                All packages hosted here are free software. Most packages hosted here were built on my home server with <a href="https://github.com/krathalan/krack" target="_blank" rel="noopener noreferrer">krack</a>, a continuous automated build system I wrote for Arch Linux.
           </p>
 
-          <h2>Modifications</h2>
+          <p>
+               See the exact <b>/etc/makepkg.conf</b> used to build all packages <a href="https://github.com/krathalan/etc-config/blob/master/home-server/makepkg.conf" rel="noopener noreferrer" target="_blank">here</a>.
+          </p>
+
+          <h2>-march=x86-64-v3</h2>
 
           <p>
-              <b>Please note all packages built after 1/10/2023 are built with -march=x86-64-v3.</b> Check if your system supports this: <a href="https://git.harting.dev/ALHP/ALHP.GO#1-check-your-system-for-support" rel="noopener noreferrer" target="_blank">https://git.harting.dev/ALHP/ALHP.GO#1-check-your-system-for-support</a>
+              <b>Please note all packages built after 1/10/2023 are built with -march=x86-64-v3.<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></b>
+
+              <br><br>Check if your system supports this:
+                    <blockquote>$ /lib/ld-linux-x86-64.so.2 --help</blockquote>
+              
+               If this line is in the output, your machine can use these packages:
+                    <blockquote>x86-64-v3 (supported, searched)
+                    </blockquote>
           </p>
+
+          <h2>Modifications</h2>
 
           <p>
                Some packages are built with additional modifications to their PKGBUILD and/or other files, or different-than-default configuration options (click to see patches for that package):
                <ul>
-                    <li><a href="https://github.com/krathalan/build-alterations/tree/master/linux-clear" rel="noopener noreferrer" target="_blank">linux-clear</a>: LLVM compiler, LTO, -march=x86-64-v3<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
-                    <li><a href="https://github.com/krathalan/build-alterations/tree/master/linux-tkg-znver3" rel="noopener noreferrer" target="_blank">linux-tkg-znver3</a>: LLVM compiler, full LTO, enable futex2 and futex_waitv, -march=znver3<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
+                    <li><a href="https://github.com/krathalan/build-alterations/tree/master/linux-clear" rel="noopener noreferrer" target="_blank">linux-clear</a>: LLVM compiler, LTO, -march=x86-64-v3</li>
+                    <li><a href="https://github.com/krathalan/build-alterations/tree/master/linux-tkg-znver3" rel="noopener noreferrer" target="_blank">linux-tkg-znver3</a>: LLVM compiler, full LTO, enable futex2 and futex_waitv, -march=znver3</li>
                     <li><a href="https://github.com/krathalan/build-alterations/tree/master/plata-theme-krath-purple" rel="noopener noreferrer" target="_blank">plata-theme-krath-purple</a>: dark color scheme with purple accents and disable desktop environments I don't use (<a href="plata-theme-krath-purple.jpg" rel="noopener noreferrer" target="_blank">screenshot</a>)</li>
                     <li><a href="https://github.com/krathalan/build-alterations/tree/master/redshift-no-geoclue" rel="noopener noreferrer" target="_blank">redshift-no-geoclue</a>: build of redshift screen color adjuster without geoclue dependency</li>
-                    <li><a href="https://github.com/krathalan/build-alterations/tree/master/wine-tkg-git-znver3" rel="noopener noreferrer" target="_blank">wine-tkg-git-znver3</a>: proton patches, enable futex2 and futex_waitv, -march=znver3<sup>[<a href="https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html" rel="noopener noreferrer" target="_blank">↗</a>]</sup></li>
+                    <li><a href="https://github.com/krathalan/build-alterations/tree/master/wine-tkg-git-znver3" rel="noopener noreferrer" target="_blank">wine-tkg-git-znver3</a>: proton patches, enable futex2 and futex_waitv, -march=znver3</li>
                </ul>
           </p>
 
@@ -73,7 +86,6 @@
 
           <p>
                All other packages are built with their default state after fetching from the AUR.
-               <br>You can see the exact makepkg.conf used to build all packages <a href="https://github.com/krathalan/etc-config/blob/master/home-server/makepkg.conf" rel="noopener noreferrer" target="_blank">here</a>.
           </p>
 
           <h2>Browse</h2>
@@ -85,19 +97,18 @@
           <h2>Add to pacman</h2>
 
           <p>
-               Add the following snippet to your <b>/etc/pacman.conf</b>:</p>
+               First add the following snippet to <b>/etc/pacman.conf</b>:</p>
 
                     <blockquote>[krathalan]
                     <br>Server = https://builds.krathalan.net/$arch</blockquote>
 
-               <p>You will need to add my GPG keys to your pacman keyring and trust them:</p>
+               <p>Then make and install the krathalans-keyring package:</p>
 
-                    <blockquote>$ curl -O "https://builds.krathalan.net/keys/builder.asc" -O "https://builds.krathalan.net/keys/dev.asc"
-                    <br>$ sudo -s
-                    <br># pacman-key -a builder.asc dev.asc
-                    <br># pacman-key --edit-key A78555FE54802333B8459100ACAA0A5F857B948C</blockquote>
+                    <blockquote>$ git clone https://github.com/krathalan/pkgbuilds.git
+                    <br>$ cd pkgbuilds/krathalans-keyring/
+                    <br>$ makepkg -i</blockquote>
 
-               <p>Then trust the key, save, and exit. Do the same for 0C6B73F391FA26F0EBCD1F75C0F9AEE56E47D174. Now you can <b>pacman -Syu</b> and get some packages.
+               <p>Now <b>pacman -Syu</b> and get some packages.
           </p>
 
           <h4>Contact me</h4>
