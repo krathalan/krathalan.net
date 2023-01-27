@@ -4,7 +4,7 @@
 }
 
 img {
-    border: 1px solid #aaaaaa;
+	border: 1px solid #aaaaaa;
 }
 
 body {
@@ -47,6 +47,10 @@ pre {
     width: 100%;
     text-align: center;
     background-color: rgb(50,50,50);
+}
+
+#no-border {
+	border-style: none;
 }
 
 .container {
