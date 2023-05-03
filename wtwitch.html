@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2021-10-26" />
+  <meta name="dcterms.date" content="2023-05-03" />
   <title>wtwitch</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
@@ -20,90 +20,126 @@
 <body>
 <header id="title-block-header">
 <h1 class="title">wtwitch</h1>
-<p class="date">2021-10-26</p>
+<p class="date">version 2.6.2, page generated on 2023-05-03</p>
 </header>
-<h1>NAME</h1>
-<p>wtwitch - terminal user interface for Twitch</p>
 <h1>SYNOPSIS</h1>
-<p>wtwitch [COMMAND] [streamer, search term, game, player, quality]</p>
+<p>wtwitch <strong>[COMMAND]</strong> <em>[args]</em></p>
 <h1>DESCRIPTION</h1>
-<p>Wtwitch is a terminal program that uses the Twitch API and the streamlink package to provide Twitch browsing, subscription, and playback functionality without signing up for a Twitch account and without loading or executing Twitch's proprietary JavaScript.</p>
+<p>Wtwitch is a terminal program that uses the Twitch API and the
+streamlink package to provide Twitch browsing, subscription, and
+playback functionality without signing up for a Twitch account and
+without loading or executing Twitch's proprietary JavaScript.</p>
 <h1>COMMANDS</h1>
 <h2>Viewing and browsing streams</h2>
-<p><strong>w</strong> <em>streamer</em>, <strong>watch</strong> <em>streamer</em></p>
+<p><strong>w</strong> <em>streamer</em>, <strong>watch</strong>
+<em>streamer</em></p>
 <blockquote>
 <p>Watch the specified <em>streamer</em>.<br />
 e.g. wtwitch <strong>w</strong> <em>dratnos</em></p>
 </blockquote>
-<p><strong>v</strong> <em>streamer</em> [optional VOD number], <strong>vod</strong> <em>streamer</em> [optional VOD number]</p>
+<p><strong>v</strong> <em>streamer</em> [optional VOD number],
+<strong>vod</strong> <em>streamer</em> [optional VOD number]</p>
 <blockquote>
-<p>List the latest VODs from a <em>streamer</em>. Optionally, supply the number of the VOD you want to watch to open it in your default player.<br />
-e.g. wtwitch <strong>v</strong> dratnos<br />
-e.g. wtwitch <strong>v</strong> dratnos 5</p>
+<p>List the latest VODs from a <em>streamer</em>. Optionally, supply the
+number of the VOD you want to watch to open it in your default
+player.<br />
+e.g. wtwitch <strong>v</strong> <em>dratnos</em><br />
+e.g. wtwitch <strong>v</strong> <em>dratnos 5</em></p>
 </blockquote>
 <p><strong>t</strong>, <strong>top</strong></p>
 <blockquote>
 <p>View the top games and streams on Twitch.<br />
 e.g. wtwitch <strong>t</strong></p>
 </blockquote>
-<p><strong>g</strong> <em>game</em>, <strong>game</strong> <em>game</em></p>
+<p><strong>g</strong> <em>game</em>, <strong>game</strong>
+<em>game</em></p>
 <blockquote>
-<p>View the top streamers for a specified <em>game</em>. Game names with spaces must be quoted, or the spaces must be escaped with \.<br />
+<p>View the top streamers for a specified <em>game</em>. Game names with
+spaces must be quoted, or the spaces must be escaped with \.<br />
 e.g. wtwitch <strong>g</strong> <em>"world of warcraft"</em><br />
 e.g. wtwitch <strong>g</strong> <em>world\ of\ warcraft</em></p>
 </blockquote>
 <p><strong>e</strong> <em>search-term</em></p>
 <blockquote>
-<p>Search games and categories for <em>search-term</em>. Search terms with spaces must be quoted, or the spaces must be escaped with \.<br />
+<p>Search games and categories for <em>search-term</em>. Search terms
+with spaces must be quoted, or the spaces must be escaped with \.<br />
 e.g. wtwitch <strong>e</strong> <em>warcraft</em></p>
 </blockquote>
 <p><strong>n</strong> <em>search-term</em></p>
 <blockquote>
-<p>Search streamers and channels for <em>search-term</em>. Search terms with spaces must be quoted, or the spaces must be escaped with \.<br />
+<p>Search streamers and channels for <em>search-term</em>. Search terms
+with spaces must be quoted, or the spaces must be escaped with \.<br />
 e.g. wtwitch <strong>n</strong> <em>warcraft</em></p>
 </blockquote>
-<p><strong>b</strong> <em>streamer</em>, <strong>block</strong> <em>streamer</em></p>
+<p><strong>b</strong> <em>streamer</em>, <strong>block</strong>
+<em>streamer</em></p>
 <blockquote>
-<p>Block a specified <em>streamer</em>, preventing them from being listed in any output. If the streamer is already blocked, blocking them again will remove them from the blocklist. Use <strong>b</strong> without specifying a streamer to show your blocklist.<br />
-You can block or unblock multiple streamers at once, by separating them with a space.<br />
+<p>Block a specified <em>streamer</em>, preventing them from being
+listed in any output. If the streamer is already blocked, blocking them
+again will remove them from the blocklist. Use <strong>b</strong>
+without specifying a streamer to show your blocklist.<br />
+You can block or unblock multiple streamers at once, by separating them
+with a space.<br />
 e.g. wtwitch <strong>b</strong> <em>dratnos</em><br />
-e.g. wtwitch <strong>b</strong> <em>dratnos</em> <em>emongg</em> <em>sleepy</em><br />
+e.g. wtwitch <strong>b</strong> <em>dratnos</em> <em>emongg</em>
+<em>sleepy</em><br />
 e.g. wtwitch <strong>b</strong></p>
 </blockquote>
 <h2>Subscriptions</h2>
-<p><strong>s</strong> <em>streamer</em>, <strong>sub</strong> <em>streamer</em></p>
+<p><strong>s</strong> <em>streamer</em>, <strong>sub</strong>
+<em>streamer</em></p>
 <blockquote>
 <p>Subscribe to a specific <em>streamer</em>.<br />
-You can subscribe to multiple streamers at once, by separating them with a space.<br />
+You can subscribe to multiple streamers at once, by separating them with
+a space.<br />
 e.g. wtwitch <strong>s</strong> <em>dratnos</em><br />
-e.g. wtwitch <strong>s</strong> <em>dratnos</em> <em>emongg</em> <em>sleepy</em></p>
+e.g. wtwitch <strong>s</strong> <em>dratnos</em> <em>emongg</em>
+<em>sleepy</em></p>
 </blockquote>
-<p><strong>u</strong> <em>streamer</em>, <strong>unsub</strong> <em>streamer</em></p>
+<p><strong>u</strong> <em>streamer</em>, <strong>unsub</strong>
+<em>streamer</em></p>
 <blockquote>
 <p>Unsubscribe from a specified <em>streamer</em>.<br />
-You can unsubscribe from multiple streamers at once, by separating them with a space.<br />
+You can unsubscribe from multiple streamers at once, by separating them
+with a space.<br />
 e.g. wtwitch <strong>u</strong> <em>dratnos</em><br />
-e.g. wtwitch <strong>u</strong> <em>dratnos</em> <em>emongg</em> <em>sleepy</em></p>
+e.g. wtwitch <strong>u</strong> <em>dratnos</em> <em>emongg</em>
+<em>sleepy</em></p>
 </blockquote>
 <p><strong>c</strong>, <strong>check</strong></p>
 <blockquote>
-<p>View your player/quality settings and the status of the streamers you are subscribed to.<br />
+<p>View your player/quality settings and the status of the streamers you
+are subscribed to.<br />
 e.g. wtwitch <strong>c</strong></p>
 </blockquote>
-<h2>Configuration options</h2>
-<p><strong>p</strong> <em>player</em>, <strong>player</strong> <em>player</em></p>
+<p><strong>o</strong></p>
 <blockquote>
-<p>Change the default <em>player</em> that gets passed to Streamlink.<br />
+<p>View all online streamers you are subscribed to, and optionally open
+streams, with fzf. You must have fzf installed to use this
+feature.<br />
+e.g. wtwitch <strong>o</strong></p>
+</blockquote>
+<h2>Configuration options</h2>
+<p><strong>p</strong> <em>player</em>, <strong>player</strong>
+<em>player</em></p>
+<blockquote>
+<p>Change the default <em>player</em> that gets passed to
+Streamlink.<br />
 e.g. wtwitch <strong>p</strong> <em>vlc</em></p>
 </blockquote>
-<p><strong>q</strong> <em>quality</em>, <strong>quality</strong> <em>quality</em></p>
+<p><strong>q</strong> <em>quality</em>, <strong>quality</strong>
+<em>quality</em></p>
 <blockquote>
-<p>Change the default <em>quality</em> that gets passed to Streamlink. 1080p60, 720p60, 720p, 480p, 360p, 160p, best, worst, and audio_only are acceptable qualities. You can specify fallback qualities separated by a comma.<br />
+<p>Change the default <em>quality</em> that gets passed to Streamlink.
+1080p60, 720p60, 720p, 480p, 360p, 160p, best, worst, and audio_only are
+acceptable qualities. You can specify fallback qualities separated by a
+comma.<br />
 e.g. wtwitch <strong>q</strong> <em>720p60,720p,best</em></p>
 </blockquote>
 <p><strong>f</strong></p>
 <blockquote>
-<p>Toggle the printing of offline subscriptions with wtwitch <strong>c</strong>.<br />
+<p>Toggle the printing of offline subscriptions with wtwitch
+<strong>c</strong>.<br />
 e.g. wtwitch <strong>f</strong></p>
 </blockquote>
 <p><strong>l</strong></p>
@@ -120,31 +156,72 @@ e.g. wtwitch <strong>h</strong></p>
 <p><strong>version</strong></p>
 <blockquote>
 <p>Print the current version of wtwitch.<br />
-e.g. wtwitch <strong>v</strong></p>
+e.g. wtwitch <strong>version</strong></p>
 </blockquote>
 <h1>TAB COMPLETION</h1>
-<p>Wtwitch will try its best to complete your input. When tabbing after wtwitch <strong>u</strong>, wtwitch will list/fill in your current subscriptions, since it only makes sense to unsubscribe from someone you're subscribed to.</p>
-<p>When tabbing after wtwitch <strong>w</strong>, wtwitch will get a list of your subscriptions that are online, and only list/fill in your subscribed streamers that are currently streaming (even though these are not the only streamers you can watch with <strong>w</strong>).</p>
+<p>Wtwitch will try its best to complete your input. When tabbing after
+wtwitch <strong>u</strong>, wtwitch will list/fill in your current
+subscriptions, since it only makes sense to unsubscribe from someone
+you're subscribed to.</p>
+<p>When tabbing after wtwitch <strong>w</strong>, wtwitch will get a
+list of your subscriptions that are online, and only list/fill in your
+subscribed streamers that are currently streaming (even though these are
+not the only streamers you can watch with <strong>w</strong>).</p>
 <h1>DEFAULT BEHAVIOR</h1>
 <h2>Player</h2>
-<p>Wtwitch will tell Streamlink to use mpv by default. Wtwitch favors mpv because mpv supports Wayland and custom window titles, such as "Watching dratnos on Twitch (1080p 60.000fps)". Wtwitch will use VLC automatically if you have VLC installed and don't have mpv installed.</p>
-<p>You can set which video player you'd like wtwitch to pass to Streamlink with wtwitch <strong>p</strong> <em>player</em>. You can pass any player you'd pass to Streamlink, and wtwitch will make sure the player you're trying to set as the default player is installed.</p>
+<p>Wtwitch will tell Streamlink to use mpv by default. Wtwitch favors
+mpv because mpv supports Wayland and custom window titles, such as
+"Watching dratnos on Twitch". Wtwitch will use VLC automatically if you
+have VLC installed and don't have mpv installed.</p>
+<p>You can set which video player you'd like wtwitch to pass to
+Streamlink with wtwitch <strong>p</strong> <em>player</em>. You can pass
+any player you'd pass to Streamlink, and wtwitch will make sure the
+player you're trying to set as the default player is in your $PATH.</p>
 <h2>Quality</h2>
-<p>Wtwitch tells Streamlink to choose the "best" quality by default. You can set which quality you'd like wtwitch to pass to Streamlink with wtwitch <strong>q</strong> <em>quality</em>. You can pass any quality you'd pass to Streamlink, including fallback qualities (like "720p,480p,worst"), and wtwitch will make sure your input is valid.</p>
+<p>Wtwitch tells Streamlink to choose the "best" quality by default. You
+can set which quality you'd like wtwitch to pass to Streamlink with
+wtwitch <strong>q</strong> <em>quality</em>. You can pass any quality
+you'd pass to Streamlink, including fallback qualities (like
+"720p,480p,worst"), and wtwitch will make sure your input is valid.</p>
 <h2>Ads</h2>
-<p>Wtwitch tells Streamlink to bypass Twitch ads. If you want to support a streamer, consider donating to them directly rather than subscribing to them on Twitch, as Twitch takes 50% of the subscription fee.</p>
+<p>Wtwitch tells Streamlink to bypass Twitch ads. If you want to support
+a streamer, consider donating to them directly rather than subscribing
+to them on Twitch, as Twitch takes a substantial portion (30-50%) of the
+subscription fee.</p>
 <h1>FILES</h1>
-<p>Wtwitch supports the XDG Base Directory specification. If your $XDG_CONFIG_HOME and $XDG_CACHE_HOME are their default values (~/.config and ~/.cache respectively), the configuration and blocklist files are at ~/.config/wtwitch/config.json, and cache files are kept in ~/.cache/wtwitch.</p>
-<p>You should never need to edit these files manually; you should use the commands listed under <strong>COMMANDS</strong> above.</p>
+<p>Wtwitch supports the XDG Base Directory specification. If your
+$XDG_CONFIG_HOME and $XDG_CACHE_HOME are their default values (~/.config
+and ~/.cache respectively), the configuration and blocklist files are at
+~/.config/wtwitch/config.json, and cache files are kept in
+~/.cache/wtwitch.</p>
+<p>You should never need to edit these files manually; you should use
+the commands listed under <strong>COMMANDS</strong> above.</p>
 <h2>environment.sh</h2>
-<p>This file exists in wtwitch's config directory, and wtwitch will source this file before running. You can put commands or variables here for wtwitch to source. This is useful on macOS, for example, to set a custom $PATH or $PYTHONPATH to support non-standard dependency locations specifically for wtwitch.</p>
+<p>This file exists in wtwitch's config directory, and wtwitch will
+source this file before running. You can put commands or variables here
+for wtwitch to source. This is useful on macOS, for example, to set a
+custom $PATH or $PYTHONPATH to support non-standard dependency locations
+specifically for wtwitch.</p>
 <h1>SYNCING SUBSCRIPTIONS</h1>
-<p>Wtwitch does not natively support syncing subscriptions across computers, but syncing subscriptions can be achieved easily using Syncthing and a utility already installed on your GNU/Linux computer. Syncthing is a powerful synchronization program for multiple operating systems licensed under the Mozilla Public License v2, which is FSF approved. You can look at Syncthing's homepage for more information, as well as their user documentation:</p>
+<p>Wtwitch does not natively support syncing subscriptions across
+computers, but syncing subscriptions can be achieved easily using
+Syncthing and a utility already installed on your GNU/Linux computer.
+Syncthing is a powerful synchronization program for multiple operating
+systems licensed under the Mozilla Public License v2, which is FSF
+approved. You can look at Syncthing's homepage for more information, as
+well as their user documentation:</p>
 <p>https://docs.syncthing.net/intro/getting-started.html</p>
-<p>After setting up Syncthing on the computers on which you wish to sync subscriptions, copy your subscriptions file from ~/.config/wtwitch/config.json to a directory that you are syncing with Syncthing. Then link the file to the previous location. For example, if you copied your subscriptions file to ~/Documents/Config, you can link it to the correct location with the command:</p>
-<p>ln -sf ~/Documents/Config/config.json ~/.config/wtwitch/config.json</p>
+<p>After setting up Syncthing on the computers on which you wish to sync
+subscriptions, copy your subscriptions file from
+~/.config/wtwitch/config.json to a directory that you are syncing with
+Syncthing. Then link the file to the previous location. For example, if
+you copied your subscriptions file to ~/Documents/Config, you can link
+it to the correct location with the command:</p>
+<p>ln -sf ~/Documents/Config/config.json
+~/.config/wtwitch/config.json</p>
 <h1>CHANGELOG</h1>
-<p>View the changes/additions for the latest installed version of wtwitch with the command:</p>
+<p>View the changelog for the latest installed version of wtwitch with
+the command:</p>
 <p>pacman -Qc wtwitch</p>
 <h1>LANGUAGES</h1>
 <p>Full support:<br />
@@ -155,9 +232,14 @@ German/Deutsch<br />
 Spanish/Español</p>
 <p>User-contributed translations are welcome!</p>
 <h1>BUGS</h1>
-<p>Please file requests and report any bugs at: https://github.com/krathalan/wtwitch/issues</p>
-<p><strong>If you are reporting a bug, please attach a debug log.</strong></p>
-<p>To start wtwitch in debug mode, set the environment variable WTWITCH_DEBUG=on. You should also redirect all output to a <em>log file</em>. You can run wtwitch in debug mode in a one-off command like so:</p>
+<p>Please file requests and report any bugs at:
+https://github.com/krathalan/wtwitch/issues</p>
+<p><strong>If you are reporting a bug, please attach a debug
+log.</strong></p>
+<p>To start wtwitch in debug mode, set the environment variable
+WTWITCH_DEBUG=on. You should also redirect all output to a <em>log
+file</em>. You can run wtwitch in debug mode in a one-off command like
+so:</p>
 <p>WTWITCH_DEBUG=on wtwitch [command] <em>&amp;&gt; debug.log</em></p>
 <h1>LICENSES</h1>
 <p>Wtwitch itself is licensed under the GPLv3.</p>
@@ -165,7 +247,9 @@ Spanish/Español</p>
 <p>jq is licensed under the MIT license.</p>
 <p>Streamlink is licensed under the 2-clause BSD license.</p>
 <p>cURL is licensed under the MIT license.</p>
-<p>VLC and mpv, should you choose either as your player, are both licensed under both the GPLv2 and LGPLv2.1 licenses.</p>
-<p>All licenses, for wtwitch itself and its dependencies, are FSF approved: https://www.gnu.org/licenses/license-list.html</p>
+<p>VLC and mpv, should you choose either as your player, are both
+licensed under both the GPLv2 and LGPLv2.1 licenses.</p>
+<p>All licenses, for wtwitch itself and its dependencies, are FSF
+approved: https://www.gnu.org/licenses/license-list.html</p>
 </body>
 </html>
