@@ -1,6 +1,6 @@
 @font-face {
-    font-family: FiraMono, monospace;
-    src: url(./FiraMono-Regular.woff2);
+    font-family: IosevkaCustom;
+    src: url(./iosevka-custom-regular.ttf);
 }
 
 img {
@@ -8,8 +8,8 @@ img {
 }
 
 body {
-    font-family: 'FiraMono', monospace;
-    font-size: 90%;
+    font-family: 'IosevkaCustom', monospace;
+    font-size: 100%;
     max-width: 1050px;
     margin-left: auto;
     margin-right: auto;
@@ -30,8 +30,8 @@ pre {
 }
 
 #manpage {
-    font-family: 'FiraMono', monospace;
-    font-size: 90%;
+    font-family: 'IosevkaCustom', monospace;
+    font-size: 100%;
 }
 
 #inner {
